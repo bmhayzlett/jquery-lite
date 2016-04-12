@@ -108,4 +108,17 @@
     return array;
   };
 
+  DOMNodeCollection.prototype.on = function(eventType, callback) {
+    this.array.forEach(function(node) {
+      node.addEventListener(eventType, callback);
+    });
+  };
+
+  DOMNodeCollection.prototype.off = function(eventType, callback) {
+    this.array.forEach(function(node) {
+      debugger
+      node.removeEventListener(eventType, callback)
+    });
+  };
+
 })();
